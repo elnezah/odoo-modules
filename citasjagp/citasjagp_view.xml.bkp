@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="view_citasjagp_tree" model="ir.ui.view">
+            		<field name="name">citasjagp.citasjagp.tree</field>
+            		<field name="model">citasjagp.citasjagp</field>
+            		<field name="priority" eval="8" />
+            		<field name="arch" type="xml">
+                		<tree string="Citas JAGP" default_order='fecha_visualizacion desc, orden_visualizacion desc'>
+                    			<field name="autor" />
+                    			<field name="cita" />
+                    			<field name="fecha_visualizacion" />
+                    			<field name="orden_visualizacion" />
+                		</tree>
+            		</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="action_view_citasjagp">
+            		<field name="name">Citas JAGP</field>
+	        	<field name="res_model">citasjagp.citasjagp</field>
+            		<field name="view_type">form</field>
+            		<field name="view_mode">tree,form</field>
+            		<field name="domain">[]</field>
+        	</record>
+
+		<menuitem id="menu_citasjagp" name="Citas JAGP"/>
+		<menuitem id="submenu_citasjagp" name="Citas JAGP" action="action_view_citasjagp"/>
+	</data>
+</odoo>
